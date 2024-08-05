@@ -5,7 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pallavi Handa - Data Analyst Portfolio</title>
     <style>
-        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        nav ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+        section {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #34495e;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .project {
+            margin-bottom: 30px;
+        }
+        .project h3 {
+            margin-bottom: 10px;
+        }
+        .project p {
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
     </style>
 </head>
 <body>
@@ -21,7 +91,6 @@
         </p>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -31,11 +100,6 @@
     </header>
 
     <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <!-- Add your professional summary here -->
-        </section>
-
         <section id="education">
             <h2>Education</h2>
             <ul>
@@ -48,7 +112,20 @@
         <section id="experience">
             <h2>Experience</h2>
             <h3>Data Analyst Intern, Senocare, India (Jun 2021 – Dec 2021)</h3>
-            <!-- Detail your internship experience -->
+            <p>Collaborated with the Client Relations Manager to gather, interpret, and analyze data to extract actionable insights.</p>
+            <h4>Key Responsibilities:</h4>
+            <ul>
+                <li>Design and develop interactive dashboards using Power BI to visualize key performance indicators (KPIs) for elder care services, including:
+                    <ul>
+                        <li>Service utilization rates across different care packages, leading to a 20% optimization of resource allocation</li>
+                        <li>Client satisfaction scores and feedback trends, contributing to a 12% improvement in overall client satisfaction</li>
+                        <li>Patterns and trends in elder care need to inform strategic decision-making and service improvements</li>
+                        <li>Cost-based analysis giving insight into the profitability of each service offering</li>
+                    </ul>
+                </li>
+                <li>Create reports to monitor service ticket trends and execution timelines, ensuring timely delivery of care services and improving on-time completion rate by 18%</li>
+                <li>Utilize MySQL to manage and query large datasets related to client profiles, service history, and health records.</li>
+            </ul>
         </section>
 
         <section id="skills">
@@ -73,22 +150,29 @@
 
         <section id="projects">
             <h2>Projects</h2>
-            <article>
+            <div class="project">
                 <h3>Business 360 - Brick & mortar and e-commerce</h3>
                 <p>Tools: Power BI | SQL | Excel | Dax Studio</p>
                 <p>Completed: Jul 2024</p>
-                <!-- Project details -->
+                <ul>
+                    <li>Customized a multi-functional Power BI dashboard to analyze Nexus hardware's sales trends over the global market by gathering data from 2 different sources (Excel/CSV files and a SQL database).</li>
+                    <li>Built data models and visualizations in Power BI, and optimized the report with DAX studio which improved the report's performance by 5%.</li>
+                    <li>Developed a dashboard that enabled Nexus Hardware to analyze department sales trends, driving a projected 10% revenue acceleration and a 20% reduction in data-related expenses.</li>
+                </ul>
                 <a href="https://github.com/Pallavi-Handa/portfolio">GitHub Repo</a> | 
                 <a href="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9">Live Dashboard</a>
-            </article>
-            <article>
+            </div>
+            <div class="project">
                 <h3>Customer Segmentation & Churn Prediction</h3>
                 <p>Tools: Python | Scikit-Learn | Pandas | Matplotlib</p>
                 <p>Completed: Jun 2024</p>
-                <!-- Project details -->
+                <ul>
+                    <li>Developed a customer churn prediction model for the telecom sector using Python, applying algorithms to identify key predictors of customer attrition.</li>
+                    <li>Performed data cleansing, manipulation, and exploratory data analysis (EDA) with Python libraries such as Pandas and Matplotlib to identify trends and patterns in extensive datasets.</li>
+                </ul>
                 <a href="https://github.com/Pallavi-Handa/Customer_Churn">GitHub Repo</a> | 
                 <a href="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9">Live Dashboard</a>
-            </article>
+            </div>
         </section>
     </main>
 
