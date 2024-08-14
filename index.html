@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pallavi Handa - Data Analyst Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #1a2a3a;
+            --primary-color: #2c3e50;
             --secondary-color: #3498db;
             --accent-color: #e74c3c;
             --text-color: #333;
@@ -23,110 +23,113 @@
         }
         
         body {
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
+            display: flex;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: var(--primary-color);
             color: #fff;
-            padding: 100px 0 50px;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            padding: 20px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
         }
         
-        .header-content {
+        .sidebar-header {
             text-align: center;
-        }
-        
-        .header-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .header-content p {
-            font-size: 1.4rem;
             margin-bottom: 30px;
+        }
+        
+        .sidebar-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary-color);
+        }
+        
+        .sidebar-header h1 {
+            margin-top: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .sidebar-header p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .sidebar-nav {
+            list-style-type: none;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-nav a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-nav a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        
+        .sidebar-nav i {
+            margin-right: 10px;
+            font-size: 1.2rem;
         }
         
         .social-links {
             margin-top: 30px;
+            display: flex;
+            justify-content: center;
         }
         
         .social-links a {
             color: #fff;
-            font-size: 1.8rem;
-            margin: 0 15px;
-            transition: transform 0.3s ease;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
         }
         
         .social-links a:hover {
-            transform: translateY(-5px);
+            color: var(--secondary-color);
         }
         
-        nav {
-            background-color: var(--card-bg);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style-type: none;
-            padding: 20px 0;
-        }
-        
-        nav ul li {
-            margin: 0 20px;
-        }
-        
-        nav ul li a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--secondary-color);
-            transition: width 0.3s ease;
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
+        .main-content {
+            margin-left: 250px;
+            padding: 40px;
+            width: calc(100% - 250px);
         }
         
         section {
             background-color: var(--card-bg);
-            margin: 60px 0;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
         }
         
         h2 {
             color: var(--primary-color);
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             position: relative;
             display: inline-block;
         }
@@ -136,29 +139,23 @@
             position: absolute;
             width: 50%;
             height: 3px;
-            bottom: -10px;
+            bottom: -5px;
             left: 0;
             background-color: var(--secondary-color);
         }
         
         .skill-category {
-            margin-bottom: 40px;
-        }
-        
-        .skill-category h3 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         
         .skill-item {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .skill-name {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
-            font-weight: 600;
+            margin-bottom: 5px;
         }
         
         .skill-bar {
@@ -166,150 +163,100 @@
             background-color: #e0e0e0;
             border-radius: 5px;
             overflow: hidden;
-            position: relative;
         }
         
         .skill-level {
             height: 100%;
             background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
             border-radius: 5px;
-            transition: width 1.5s ease-in-out;
-            position: relative;
-        }
-        
-        .skill-level::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(
-                45deg,
-                rgba(255,255,255,0.2) 25%,
-                transparent 25%,
-                transparent 50%,
-                rgba(255,255,255,0.2) 50%,
-                rgba(255,255,255,0.2) 75%,
-                transparent 75%,
-                transparent
-            );
-            background-size: 20px 20px;
-            animation: move 1s linear infinite;
-        }
-        
-        @keyframes move {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 20px 0;
-            }
+            transition: width 1s ease-in-out;
         }
         
         .project {
             background-color: #f9f9f9;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 40px;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid #e0e0e0;
         }
         
         .project:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
         .project h3 {
             color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-        
-        .project-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-            color: #666;
+            margin-bottom: 15px;
         }
         
         .project-links {
-            margin-top: 25px;
+            margin-top: 15px;
         }
         
         .project-links a {
             display: inline-block;
-            margin-right: 15px;
-            padding: 10px 20px;
+            margin-right: 10px;
+            padding: 8px 15px;
             background-color: var(--secondary-color);
             color: #fff;
             text-decoration: none;
-            border-radius: 30px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 0.9rem;
         }
         
         .project-links a:hover {
             background-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        footer {
-            background-color: var(--primary-color);
-            color: #fff;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 60px;
         }
         
         @media (max-width: 768px) {
-            .header-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            nav ul {
+            body {
                 flex-direction: column;
-                align-items: center;
             }
-            
-            nav ul li {
-                margin: 10px 0;
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
             }
-            
-            section {
-                padding: 30px;
+            .main-content {
+                margin-left: 0;
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <h1>Pallavi Handa</h1>
-                <p>Data Analyst | Business Analytics Student</p>
-                <div class="social-links">
-                    <a href="mailto:pallavihanda25@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="https://www.linkedin.com/in/pallavi-handa"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Pallavi-Handa"><i class="fab fa-github"></i></a>
-                    <a href="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9"><i class="fas fa-chart-bar"></i></a>
-                </div>
-            </div>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="your-profile-picture.jpg" alt="Pallavi Handa">
+            <h1>Pallavi Handa</h1>
+            <p>Data Analyst | Business Analytics Student</p>
         </div>
-    </header>
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="#skills"><i class="fas fa-chart-bar"></i> Skills</a></li>
+                <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+            </ul>
+        </nav>
+        <div class="social-links">
+            <a href="mailto:pallavihanda25@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/pallavi-handa"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Pallavi-Handa"><i class="fab fa-github"></i></a>
+            <a href="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9"><i class="fas fa-chart-bar"></i></a>
+        </div>
+    </aside>
 
-    <nav>
-        <ul>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
-    </nav>
+    <main class="main-content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Passionate data analyst with a keen eye for detail and a drive for uncovering meaningful insights. Experienced in leveraging data to drive business decisions and optimize processes.</p>
+        </section>
 
-    <main class="container">
         <section id="education">
             <h2>Education</h2>
             <ul>
@@ -418,10 +365,21 @@
             <h2>Projects</h2>
             <div class="project">
                 <h3>Business 360 - Brick & mortar and e-commerce</h3>
-                <div class="project-info">
-                    <span><strong>Tools:</strong> Power BI | SQL | Excel | Dax Studio</span>
-                    <span><strong>Completed:</strong> Jul 2024</span>
-                </div>
+                <p><strong>Tools:</strong> Power BI | SQL | Excel | Dax Studio</p>
+                <p><strong>Completed:</strong> Jul 2024</p>
                 <ul>
                     <li>Customized a multi-functional Power BI dashboard to analyze Nexus hardware's sales trends over the global market by gathering data from 2 different sources (Excel/CSV files and a SQL database).</li>
-                    <li>Built data models and visualizations in Power BI, and optimized the
+                    <li>Built data models and visualizations in Power BI, and optimized the report with DAX studio which improved the report's performance by 5%.</li>
+                    <li>Developed a dashboard that enabled Nexus Hardware to analyze department sales trends, driving a projected 10% revenue acceleration and a 20% reduction in data-related expenses.</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/Pallavi-Handa/portfolio">GitHub Repo</a>
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9">Live Dashboard</a>
+                </div>
+            </div>
+            <div class="project">
+                <h3>Customer Segmentation & Churn Prediction</h3>
+                <p><strong>Tools:</strong> Python | Scikit-Learn | Pandas | Matplotlib</p>
+                <p><strong>Completed:</strong> Jun 2024</p>
+                <ul>
+                    <li>Developed a customer churn prediction model for the telecom sector using Python, applying algorithms to identify key predictors of customer attrition.</li>
