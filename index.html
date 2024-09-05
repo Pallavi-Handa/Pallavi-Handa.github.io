@@ -3,358 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pallavi Handa - Data Analyst Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Pallavi Handa's Portfolio</title>
     <style>
-        :root {
-            --primary-color: #ff8c00;
-            --secondary-color: #4b0082;
-            --accent-color: #00ced1;
-            --bg-color: #1b1b2f;
-            --text-color: #f7f7f7;
-            --card-bg: #222831;
-        }
-        
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
         }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            display: flex;
-        }
-        
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            background-color: var(--primary-color);
+        header {
+            background-color: #333;
             color: #fff;
-            padding: 20px;
-            position: fixed;
-            left: 0;
-            top: 0;
-            overflow-y: auto;
-        }
-        
-        .sidebar-header {
+            padding: 1rem;
             text-align: center;
-            margin-bottom: 30px;
         }
-        
-        .sidebar-header img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--secondary-color);
-        }
-        
-        .sidebar-header h1 {
-            margin-top: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .sidebar-header p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        .sidebar-nav {
-            list-style-type: none;
-        }
-        
-        .sidebar-nav li {
-            margin-bottom: 15px;
-        }
-        
-        .sidebar-nav a {
-            color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-        
-        .sidebar-nav a:hover {
-            color: var(--secondary-color);
-            transform: translateX(5px);
-        }
-        
-        .sidebar-nav i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .social-links {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .social-links a {
-            color: #fff;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .main-content {
-            margin-left: 250px;
-            padding: 40px;
-            width: calc(100% - 250px);
-        }
-        
-        section {
-            background-color: var(--card-bg);
-            margin-bottom: 40px;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        section:hover {
-            transform: translateY(-5px);
-        }
-        
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--secondary-color);
-        }
-        
-        .skill-category {
-            margin-bottom: 30px;
-        }
-        
-        .skill-item {
-            margin-bottom: 15px;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-        }
-        
-        .skill-bar {
-            height: 10px;
-            background-color: #e0e0e0;
-            border-radius: 5px;
+        .container {
+            width: 80%;
+            margin: auto;
             overflow: hidden;
         }
-        
-        .skill-level {
-            height: 100%;
-            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-            border-radius: 5px;
-            transition: width 1s ease-in-out;
+        img {
+            max-width: 100%;
+            height: auto;
         }
-        
-        .project {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #e0e0e0;
+        .sidebar {
+            float: left;
+            width: 25%;
+            background: #333;
+            color: #fff;
+            padding: 1rem;
         }
-        
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .project h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .project-links {
-            margin-top: 15px;
-        }
-        
-        .project-links a {
-            display: inline-block;
-            margin-right: 10px;
-            padding: 8px 15px;
-            background-color: var(--secondary-color);
+        .sidebar a {
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            font-size: 0.9rem;
+            display: block;
+            padding: 0.5rem 0;
         }
-        
-        .project-links a:hover {
-            background-color: var(--primary-color);
+        .sidebar a:hover {
+            background: #575757;
         }
-        
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: static;
-            }
-            .main-content {
-                margin-left: 0;
-                width: 100%;
-            }
+        .content {
+            float: right;
+            width: 70%;
+            padding: 1rem;
         }
-
+        footer {
+            clear: both;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-header">
-           <img src="https://media.licdn.com/dms/image/v2/D5603AQG7Jkifg5XexQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1685992178343?e=1729123200&v=beta&t=BVyD9hoqNLz-TkNCLvmguyxisZiKDz8JAlZUPWV2pcY" alt="Pallavi Handa">
-            <h1>Pallavi Handa</h1>
-            <p>Data Analyst | Business Analytics Student</p>
+    <header>
+        <h1>Pallavi Handa's Portfolio</h1>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Menu</h2>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
         </div>
-        <nav>
-            <ul class="sidebar-nav">
-                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-                <li><a href="#skills"><i class="fas fa-chart-bar"></i> Skills</a></li>
-                <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
-                <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
-            </ul>
-        </nav>
-        <div class="social-links">
-            <a href="mailto:pallavihanda25@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/pallavi-handa"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Pallavi-Handa"><i class="fab fa-github"></i></a>
-            <a href="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9"><i class="fas fa-chart-bar"></i></a>
+
+        <div class="content">
+            <h2 id="projects">Projects</h2>
+            
+            <h3>Healthcare Provider Analytics</h3>
+            <p><strong>[Power BI | DAX]</strong> | Live Dashboard – August 2024</p>
+            <p>Managed $3M+ in billing data and $1M in out-of-pocket expenses via Power BI, optimizing financial tracking and identifying a 10% potential billing efficiency.</p>
+            <img src="assets/Healthcare_physicianview.png" alt="Healthcare Provider Analytics - Physician View">
+            <img src="assets/Healthcare_revenue(d).png" alt="Healthcare Provider Analytics - Revenue Detail (D)">
+            <img src="assets/Healthcare_revenue(l).png" alt="Healthcare Provider Analytics - Revenue Detail (L)">
+            
+            <h3>NEXUS-360 Analytics</h3>
+            <p><strong>[Finance | Marketing | Sales]</strong> | Dashboard Analysis – August 2024</p>
+            <p>Developed interactive dashboards across Finance, Marketing, and Sales, integrating key performance metrics and visualizations to drive business insights.</p>
+            <img src="assets/NEXUS-360_Finance.png" alt="NEXUS-360 Finance Dashboard">
+            <img src="assets/NEXUS-360_Marketing.png" alt="NEXUS-360 Marketing Dashboard">
+            <img src="assets/NEXUS-360_SALES.png" alt="NEXUS-360 Sales Dashboard">
+
+            <h2 id="certifications">Certifications</h2>
+            <p>Details about your certifications will be listed here.</p>
         </div>
-    </aside>
+    </div>
 
-    <main class="main-content">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Passionate data analyst with a keen eye for detail and a drive for uncovering meaningful insights. Experienced in leveraging data to drive business decisions and optimize processes.</p>
-        </section>
-
-        <section id="experience">
-            <h2>Experience</h2>
-            <h3>Data Analyst Intern, Senocare, India (Jun 2021 – Dec 2021)</h3>
-            <p>Collaborated with the Client Relations Manager to gather, interpret, and analyze data to extract actionable insights.</p>
-                        <h3>Business Intelligence Analyst, XYZ Corp (Jan 2022 – Present)</h3>
-            <p>Utilized Power BI and SQL to develop dashboards, track key performance indicators, and optimize data reporting processes.</p>
-        </section>
-
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skill-category">
-                <h3>Data Analysis</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Python</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>SQL</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Power BI</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 80%;"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Technical Skills</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Excel</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>MySQL</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 80%;"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Healthcare Provider Analytics</h3>
-                <img src="assets/Healthcare_physicianview.png" alt="Healthcare Provider Analytics - Physician View" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
-                <p><strong>[Power BI | DAX]</strong> | Live Dashboard – August 2024. Managed $3M+ in billing data and $1M in out-of-pocket expenses via Power BI, optimizing financial tracking and identifying a 10% potential billing efficiency.</p>
-                <div class="project-links">
-                    <a href="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" target="_blank">View Dashboard</a>
-                </div>
-            </div>
-            <div class="project">
-                <h3>NEXUS-360 Analytics</h3>
-                <img src="assets/NEXUS-360_Finance.png" alt="NEXUS-360 Finance Dashboard" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
-                <p><strong>[Power BI | SQL]</strong> | Interactive Dashboard – September 2024. Developed comprehensive financial, marketing, and sales dashboards for NEXUS-360, facilitating data-driven decision-making across departments.</p>
-                <div class="project-links">
-                    <a href="https://www.example.com/nexus-360-finance" target="_blank">View Dashboard</a>
-                </div>
-            </div>
-            <div class="project">
-                <h3>Customer Churn Prediction</h3>
-                <img src="assets/NEXUS-360_Marketing.png" alt="Customer Churn Prediction Dashboard" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
-                <p><strong>[Python | Scikit-Learn]</strong> | Model Development – August 2024. Achieved a model accuracy of approximately 92.4% in predicting customer churn, providing actionable insights for retention strategies.</p>
-                <div class="project-links">
-                    <a href="https://www.example.com/customer-churn" target="_blank">View Report</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-            <p><strong>Graduate Certificate in Business Analytics</strong> | Seneca College, Toronto, Canada – 2022</p>
-            <p><strong>Bachelor of Commerce</strong> | Hansraj College, Delhi, India – 2019</p>
-            <p><strong>International Business Management</strong> | Durham College, Ontario, Canada – 2020</p>
-        </section>
-    </main>
+    <footer>
+        <p>&copy; 2024 Pallavi Handa. All rights reserved.</p>
+    </footer>
 </body>
 </html>
