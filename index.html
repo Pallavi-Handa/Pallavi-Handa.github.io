@@ -9,12 +9,12 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --text-color: #333;
-            --bg-color: #f4f4f4;
-            --card-bg: #ffffff;
+            --primary-color: #ff8c00;
+            --secondary-color: #4b0082;
+            --accent-color: #00ced1;
+            --bg-color: #1b1b2f;
+            --text-color: #f7f7f7;
+            --card-bg: #222831;
         }
         
         * {
@@ -25,128 +25,165 @@
         
         body {
             font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--text-color);
-            background-color: var(--bg-color);
-            display: flex;
+            overflow-x: hidden;
         }
-        
+
+        /* Sidebar styling */
         .sidebar {
-            width: 250px;
+            width: 300px;
             height: 100vh;
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 20px;
+            background-color: var(--bg-color);
+            padding: 30px 20px;
             position: fixed;
             left: 0;
             top: 0;
-            overflow-y: auto;
-        }
-        
-        .sidebar-header {
-            text-align: center;
-            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
         }
         
         .sidebar-header img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--secondary-color);
+            border: 5px solid var(--primary-color);
         }
         
         .sidebar-header h1 {
-            margin-top: 15px;
-            font-size: 1.5rem;
+            color: var(--text-color);
+            font-size: 2rem;
+            text-align: center;
+            margin: 15px 0;
         }
         
         .sidebar-nav {
-            list-style-type: none;
+            list-style: none;
+            padding: 0;
         }
-        
+
         .sidebar-nav li {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
-        
+
         .sidebar-nav a {
-            color: #fff;
+            color: var(--text-color);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            display: block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
         
         .sidebar-nav a:hover {
-            color: var(--secondary-color);
-            transform: translateX(5px);
+            background-color: var(--accent-color);
         }
-        
-        .sidebar-nav i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-        
+
         .social-links {
-            margin-top: 30px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
         }
-        
+
         .social-links a {
-            color: #fff;
+            color: var(--accent-color);
             font-size: 1.5rem;
             margin: 0 10px;
             transition: color 0.3s ease;
         }
-        
+
         .social-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .main-content {
-            margin-left: 250px;
-            padding: 40px;
-            width: calc(100% - 250px);
-        }
-        
-        section {
-            background-color: var(--card-bg);
-            margin-bottom: 40px;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        section:hover {
-            transform: translateY(-5px);
-        }
-        
-        h2 {
             color: var(--primary-color);
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
         }
-        
+
+        /* Main content */
+        .main-content {
+            margin-left: 300px;
+            padding: 50px;
+            color: var(--text-color);
+        }
+
+        section {
+            margin-bottom: 60px;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            position: relative;
+            color: var(--primary-color);
+        }
+
         h2::after {
             content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
             position: absolute;
-            width: 50%;
-            height: 3px;
-            bottom: -5px;
             left: 0;
-            background-color: var(--secondary-color);
+            bottom: -10px;
         }
 
         .project img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .project-links a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
         }
     </style>
 </head>
+
 <body>
     <aside class="sidebar">
         <div class="sidebar-header">
@@ -173,18 +210,21 @@
     <main class="main-content">
         <section id="about">
             <h2>About Me</h2>
-            <p>Passionate data analyst with a keen eye for detail and a drive for uncovering meaningful insights.</p>
+            <p>I’m Pallavi, a passionate data analyst who loves turning raw data into meaningful insights. With a knack for Power BI and Python, I’ve delivered actionable reports and models that help businesses grow and make informed decisions.</p>
         </section>
 
         <section id="experience">
             <h2>Experience</h2>
-            <h3>Data Analyst Intern, Senocare, India</h3>
-            <p>Gathered, interpreted, and analyzed data to extract actionable insights.</p>
+            <p><strong>Data Analyst Intern</strong>, Senocare, India (Jun 2021 – Dec 2021)</p>
+            <ul>
+                <li>Designed and developed interactive dashboards using Power BI to visualize elder care performance indicators (KPIs).</li>
+                <li>Analyzed service utilization trends, contributing to a 20% optimization in resource allocation.</li>
+            </ul>
         </section>
 
         <section id="skills">
             <h2>Skills</h2>
-            <p>Power BI, Python, SQL, Excel, etc.</p>
+            <p><strong>Power BI, SQL, Python, Tableau, Advanced Excel</strong></p>
         </section>
 
         <section id="projects">
@@ -193,28 +233,36 @@
             <div class="project">
                 <h3>Business 360 - Sales Dashboard</h3>
                 <img src="assets/images/project1-placeholder.jpg" alt="Business 360 Project">
-                <p>Power BI, SQL, Excel</p>
+                <p>Customized a Power BI dashboard to analyze global sales trends for Nexus hardware.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Pallavi-Handa/portfolio">GitHub Repo</a>
+                    <a href="#">Live Demo</a>
+                </div>
             </div>
 
             <div class="project">
                 <h3>Cryptocurrency Data Analysis</h3>
                 <img src="assets/images/project2-placeholder.jpg" alt="Cryptocurrency Project">
-                <p>Python, Seaborn, Pandas</p>
+                <p>Developed an automated Python system to extract and visualize trends in the top 15 cryptocurrencies.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Pallavi-Handa/Automating-Crypto-Report">GitHub Repo</a>
+                </div>
             </div>
 
             <div class="project">
                 <h3>Customer Segmentation & Churn Prediction</h3>
-                <img src="assets/images/project3-placeholder.jpg" alt="Customer Churn Project">
-                <p>Python, Scikit-Learn, Pandas</p>
+                <img src="assets/images/project3-placeholder.jpg" alt="Churn Prediction Project">
+                <p>Built a predictive model using Python to forecast customer churn in the telecom sector, achieving a 92.4% accuracy rate.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Pallavi-Handa/Customer_Churn">GitHub Repo</a>
+                </div>
             </div>
         </section>
 
         <section id="education">
             <h2>Education</h2>
-            <ul>
-                <li>Seneca College, Business Analytics</li>
-                <li>Durham College, International Business Management</li>
-            </ul>
+            <p>Seneca College, Business Analytics (2024)</p>
+            <p>Durham College, International Business Management (2023)</p>
         </section>
     </main>
 
@@ -224,7 +272,7 @@
 
     <script>
         var typed = new Typed('#typed-text', {
-            strings: ["a Data Analyst", "a Python Developer", "a Power BI Expert", "an SQL Specialist"],
+            strings: ["a Data Analyst", "a Python Developer", "a Power BI Expert"],
             typeSpeed: 50,
             backSpeed: 50,
             loop: true
