@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaEnvelope, FaChartBar, FaBars } from 'react-icons/fa';
 
+// Color palette
+const colors = {
+  primary: '#6B46C1', // Deep purple
+  secondary: '#ED8936', // Warm orange
+  background: '#F7FAFC', // Light gray
+  text: '#2D3748', // Dark gray
+  white: '#FFFFFF',
+};
+
 // Utility function for smooth scrolling
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId);
@@ -26,8 +35,9 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
   return (
     <>
       <button
-        className="md:hidden fixed top-4 left-4 z-50 bg-purple-600 text-white p-2 rounded-full shadow-lg"
+        className="md:hidden fixed top-4 left-4 z-50 bg-primary text-white p-2 rounded-full shadow-lg"
         onClick={toggleSidebar}
+        style={{ backgroundColor: colors.primary }}
       >
         <FaBars size={24} />
       </button>
@@ -38,7 +48,8 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
             animate={{ x: 0 }}
             exit={{ x: -250 }}
             transition={{ duration: 0.3 }}
-            className="fixed left-0 top-0 h-screen w-64 bg-gradient-to-b from-orange-400 to-purple-600 text-white p-6 overflow-y-auto z-40"
+            className="fixed left-0 top-0 h-screen w-64 text-white p-6 overflow-y-auto z-40"
+            style={{ background: `linear-gradient(to bottom, ${colors.secondary}, ${colors.primary})` }}
           >
             <div className="text-center mb-8">
               <img
@@ -57,9 +68,10 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
                       onClick={() => handleSetActiveSection(section)}
                       className={`w-full text-left py-2 px-4 rounded transition-all ${
                         activeSection === section
-                          ? 'bg-white text-purple-600 font-bold'
+                          ? 'bg-white text-primary font-bold'
                           : 'hover:bg-white/20'
                       }`}
+                      style={{ color: activeSection === section ? colors.primary : colors.white }}
                     >
                       {section.charAt(0).toUpperCase() + section.slice(1)}
                     </button>
@@ -68,16 +80,16 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
               </ul>
             </nav>
             <div className="mt-8 flex justify-center space-x-4">
-              <a href="mailto:pallavihanda25@gmail.com" className="text-white hover:text-purple-200 transition-colors">
+              <a href="mailto:pallavihanda25@gmail.com" className="text-white hover:text-secondary transition-colors">
                 <FaEnvelope size={24} />
               </a>
-              <a href="https://www.linkedin.com/in/pallavi-handa" className="text-white hover:text-purple-200 transition-colors">
+              <a href="https://www.linkedin.com/in/pallavi-handa" className="text-white hover:text-secondary transition-colors">
                 <FaLinkedin size={24} />
               </a>
-              <a href="https://github.com/Pallavi-Handa" className="text-white hover:text-purple-200 transition-colors">
+              <a href="https://github.com/Pallavi-Handa" className="text-white hover:text-secondary transition-colors">
                 <FaGithub size={24} />
               </a>
-              <a href="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" className="text-white hover:text-purple-200 transition-colors">
+              <a href="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" className="text-white hover:text-secondary transition-colors">
                 <FaChartBar size={24} />
               </a>
             </div>
@@ -97,7 +109,7 @@ const Section = ({ id, title, children }) => {
       transition={{ duration: 0.5 }}
       className="mb-12 scroll-mt-16"
     >
-      <h2 className="text-3xl font-bold mb-6 text-purple-600 border-b-2 border-orange-400 pb-2">{title}</h2>
+      <h2 className="text-3xl font-bold mb-6 pb-2" style={{ color: colors.primary, borderBottomColor: colors.secondary, borderBottomWidth: '2px' }}>{title}</h2>
       {children}
     </motion.section>
   );
@@ -112,7 +124,8 @@ const SkillBar = ({ name, level }) => {
       </div>
       <div className="w-full bg-gray-200 rounded-full h-2.5">
         <motion.div
-          className="bg-purple-600 h-2.5 rounded-full"
+          className="h-2.5 rounded-full"
+          style={{ backgroundColor: colors.primary }}
           initial={{ width: 0 }}
           animate={{ width: `${level}%` }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -128,7 +141,7 @@ const ProjectCard = ({ title, tools, date, description, links, images }) => {
       whileHover={{ scale: 1.02 }}
       className="bg-white rounded-lg shadow-lg p-6 mb-8"
     >
-      <h3 className="text-2xl font-bold mb-2 text-purple-600">{title}</h3>
+      <h3 className="text-2xl font-bold mb-2" style={{ color: colors.primary }}>{title}</h3>
       <p className="text-sm text-gray-600 mb-2"><strong>Tools:</strong> {tools}</p>
       <p className="text-sm text-gray-600 mb-4"><strong>Completed:</strong> {date}</p>
       <ul className="list-disc list-inside mb-4 text-gray-700">
@@ -141,7 +154,8 @@ const ProjectCard = ({ title, tools, date, description, links, images }) => {
           <a
             key={index}
             href={link.url}
-            className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors"
+            className="text-white px-4 py-2 rounded hover:bg-secondary transition-colors"
+            style={{ backgroundColor: colors.primary }}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -187,18 +201,18 @@ const Portfolio = () => {
   }, [activeSection]);
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div style={{ backgroundColor: colors.background, color: colors.text }} className="min-h-screen">
       <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
       <main className="md:ml-64 p-8">
         <Section id="about" title="About Me">
-          <p className="text-lg text-gray-700">
+          <p className="text-lg">
             Passionate data analyst with a keen eye for detail and a drive for uncovering meaningful insights. Experienced in leveraging data to drive business decisions and optimize processes.
           </p>
         </Section>
 
         <Section id="experience" title="Experience">
           <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-bold mb-2">Data Analyst Intern, Senocare, India (Jun 2021 – Dec 2021)</h3>
+            <h3 className="text-xl font-bold mb-2" style={{ color: colors.primary }}>Data Analyst Intern, Senocare, India (Jun 2021 – Dec 2021)</h3>
             <p className="mb-4">Collaborated with the Client Relations Manager to gather, interpret, and analyze data to extract actionable insights.</p>
             <h4 className="font-bold mb-2">Key Responsibilities:</h4>
             <ul className="list-disc list-inside text-gray-700">
@@ -219,19 +233,19 @@ const Portfolio = () => {
         <Section id="skills" title="Skills">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Analytical Tools</h3>
+              <h3 className="text-xl font-bold mb-4" style={{ color: colors.secondary }}>Analytical Tools</h3>
               <SkillBar name="Power BI" level={90} />
               <SkillBar name="Tableau" level={85} />
               <SkillBar name="Advanced Excel" level={95} />
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-4">Programming Languages</h3>
+              <h3 className="text-xl font-bold mb-4" style={{ color: colors.secondary }}>Programming Languages</h3>
               <SkillBar name="SQL" level={90} />
               <SkillBar name="Python" level={80} />
               <SkillBar name="SAS" level={75} />
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-4">Database</h3>
+              <h3 className="text-xl font-bold mb-4" style={{ color: colors.secondary }}>Database</h3>
               <SkillBar name="MySQL" level={85} />
             </div>
           </div>
@@ -306,7 +320,7 @@ const Portfolio = () => {
         <Section id="education" title="Education">
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-bold mb-2">Academic Background</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ color: colors.secondary }}>Academic Background</h3>
               <ul className="list-disc list-inside text-gray-700">
                 <li>Seneca College, Canada - Business Analytics (Aug 2024)</li>
                 <li>Durham College, Canada - International Business Management (Aug 2023)</li>
@@ -314,14 +328,15 @@ const Portfolio = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-2">Certifications</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ color: colors.secondary }}>Certifications</h3>
               <div className="bg-white rounded-lg shadow-lg p-6">
-                <h4 className="text-lg font-semibold mb-2">Data Analyst Associate - DataCamp</h4>
+                <h4 className="text-lg font-semibold mb-2" style={{ color: colors.primary }}>Data Analyst Associate - DataCamp</h4>
                 <p className="text-sm text-gray-600 mb-2">Completed: Jan 2024</p>
                 <div className="flex space-x-2">
                   <a 
                     href="https://www.datacamp.com/certificate/DAA0019567730341" 
-                    className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors"
+                    className="text-white px-4 py-2 rounded hover:bg-secondary transition-colors"
+                    style={{ backgroundColor: colors.primary }}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -329,7 +344,8 @@ const Portfolio = () => {
                   </a>
                   <a 
                     href="https://www.datacamp.com/datalab/w/6d890b3b-4804-4cb8-a475-7dfcc4d1a0e3" 
-                    className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors"
+                    className="text-white px-4 py-2 rounded hover:bg-secondary transition-colors"
+                    style={{ backgroundColor: colors.primary }}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -341,7 +357,7 @@ const Portfolio = () => {
           </div>
         </Section>
       </main>
-      <footer className="bg-gray-800 text-white text-center py-4 md:ml-64">
+      <footer className="text-center py-4 md:ml-64" style={{ backgroundColor: colors.primary, color: colors.white }}>
         <p>© 2024 Pallavi Handa. All rights reserved.</p>
       </footer>
     </div>
@@ -349,3 +365,4 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+            
