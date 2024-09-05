@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pallavi Handa - Data Analyst Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         :root {
             --primary-color: #ff8c00;
@@ -14,27 +13,19 @@
             --bg-color: #1b1b2f;
             --text-color: #f7f7f7;
             --card-bg: #222831;
-            --animate-duration: 2s;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Roboto', Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            animation: gradient 10s ease infinite;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         header {
@@ -126,10 +117,6 @@
             margin-bottom: 1rem;
         }
 
-        .education-item, .experience-item {
-            margin-bottom: 1rem;
-        }
-
         .skills-list {
             display: flex;
             flex-wrap: wrap;
@@ -159,7 +146,7 @@
 
         .project:hover {
             transform: scale(1.05);
-                    }
+        }
 
         .project h3 {
             color: var(--primary-color);
@@ -209,141 +196,79 @@
     </style>
 </head>
 <body>
+    <header>
+        <h1>Pallavi Handa</h1>
+        <p>Data Analyst | Python Developer | Power BI Expert</p>
+    </header>
 
-<header>
-    <h1>Pallavi Handa</h1>
-    <p>Data Analyst | Python Developer | Power BI Expert</p>
-</header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<nav>
-    <ul>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm Pallavi, a passionate data analyst with expertise in Power BI and Python. With a keen eye for detail and a love for uncovering insights, I transform complex data into clear, actionable intelligence that drives business decisions.</p>
+        </section>
 
-<main>
-    <section id="education">
-        <h2>My Education</h2>
-        <div class="education-item">
-            <h3>Business Analytics – Seneca College – Canada</h3>
-            <p>January 2024 - August 2024</p>
-            <p>Coursework: Machine learning, Sentiment analysis, Data mining and modeling, SAS</p>
-            <p>Grade: High Honours</p>
-        </div>
-        <div class="education-item">
-            <h3>International Business Management – Durham College – Canada</h3>
-            <p>January 2023 - August 2023</p>
-            <p>Coursework: Project Management, Supply chain, Trade Feasibility</p>
-            <p>Grade: High Honours</p>
-        </div>
-        <div class="education-item">
-            <h3>Bachelor of Commerce – University of Delhi – India</h3>
-            <p>July 2019 - June 2022</p>
-            <p>Grade: 8.1/10 GPA</p>
-        </div>
-    </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span class="skill-item">Power BI</span>
+                <span class="skill-item">Python</span>
+                <span class="skill-item">SQL</span>
+                <span class="skill-item">Data Visualization</span>
+                <span class="skill-item">Statistical Analysis</span>
+                <span class="skill-item">Machine Learning</span>
+                <span class="skill-item">Data Cleaning</span>
+                <span class="skill-item">Excel</span>
+            </div>
+        </section>
 
-    <section id="experience">
-        <h2>Work Experience</h2>
-        <div class="experience-item">
-            <h3>DATA ANALYST INTERN – Senocare – India</h3>
-            <p>May 2022 - October 2022</p>
-            <p>Collaborated with the Client Relations Manager to gather, interpret, and analyze data to extract actionable insights.</p>
-            <p>Designed and developed interactive dashboards using Power BI, which enhanced the visualization of key elder care performance indicators (KPIs) and improved stakeholder understanding.</p>
-            <p>Analyzed service utilization rates across different care packages, leading to a 20% optimization of resource allocation.</p>
-            <p>Evaluated client satisfaction scores and feedback trends, contributing to a 12% improvement in overall client satisfaction.</p>
-            <p>Conducted cost-based analysis to provide insights into the profitability of each service offering, aiding strategic financial planning.</p>
-            <p>Engineered reports to monitor service ticket trends and execution timelines, ensuring timely delivery of care services and improving on-time completion rate by 18%.</p>
-            <p>Utilized MySQL to manage and query large datasets related to client profiles, service history, and health records.</p>
-        </div>
-    </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>Business 360 - Sales Dashboard</h3>
+                    <p>A comprehensive Power BI dashboard analyzing global sales trends for Nexus hardware. This project involved complex data modeling and DAX measures to provide actionable insights for sales strategies.</p>
+                </div>
+                <div class="project">
+                    <h3>Cryptocurrency Data Analysis</h3>
+                    <p>Developed a Python system to extract, process, and visualize trends in the top 15 cryptocurrencies. Utilized APIs for real-time data fetching and Matplotlib for creating insightful visualizations.</p>
+                </div>
+                <div class="project">
+                    <h3>Customer Churn Prediction</h3>
+                    <p>Built a machine learning model using Python and scikit-learn to forecast customer churn in the telecom sector. Achieved 85% accuracy in predicting potential churners, enabling proactive retention strategies.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-list">
-            <div class="skill-item">
-                <i class="fas fa-chart-bar"></i>
-                <h3>Data Analysis & Visualization</h3>
-                <p>Excel (Pivot Tables, Charts, Lookups), Power BI, Tableau</p>
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <a href="mailto:pallavihanda25@gmail.com">pallavihanda25@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <a href="https://www.linkedin.com/in/pallavi-handa" target="_blank">linkedin.com/in/pallavi-handa</a>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <a href="https://github.com/Pallavi-Handa" target="_blank">github.com/Pallavi-Handa</a>
+                </div>
             </div>
-            <div class="skill-item">
-                <i class="fas fa-code"></i>
-                <h3>Programming & Analytics</h3>
-                <p>Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn), SQL (MySQL,                PostgreSQL), R (dplyr, tidyr, ggplot2)</p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-database"></i>
-                <h3>Data Management</h3>
-                <p>MySQL, PostgreSQL, MongoDB, Data Warehousing</p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-cloud"></i>
-                <h3>Cloud Computing</h3>
-                <p>AWS (EC2, S3, RDS), Google Cloud (Compute Engine, Storage, BigQuery)</p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-microchip"></i>
-                <h3>Machine Learning</h3>
-                <p>Supervised Learning (Regression, Classification), Unsupervised Learning (Clustering, Dimensionality Reduction)</p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-file-alt"></i>
-                <h3>Business Intelligence</h3>
-                <p>Power BI, Tableau, QlikView</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="project">
-                <h3>COVID-19 Dashboard</h3>
-                <p>Developed a Power BI dashboard to track COVID-19 cases, deaths, and vaccination rates across the world.</p>
-                <p>Utilized data from reputable sources such as WHO, CDC, and Our World in Data.</p>
-                <p>Implemented interactive visualizations to facilitate exploration and analysis of the data.</p>
-            </div>
-            <div class="project">
-                <h3>Customer Segmentation</h3>
-                <p>Conducted customer segmentation analysis for an e-commerce company using Python and Scikit-learn.</p>
-                <p>Clustered customers based on demographic and transactional data to identify high-value segments.</p>
-                <p>Developed targeted marketing strategies to improve customer engagement and retention.</p>
-            </div>
-            <div class="project">
-                <h3>Predicting Stock Prices</h3>
-                <p>Built a predictive model using Python and TensorFlow to forecast stock prices based on historical data.</p>
-                <p>Utilized technical indicators such as moving averages and relative strength index to improve model accuracy.</p>
-                <p>Achieved a mean absolute error of 5% in predicting stock prices.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Get in Touch</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:pallavi.handa@email.com">pallavi.handa@email.com</a>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <a href="tel:+1234567890">+1234567890</a>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-linkedin"></i>
-                <a href="https://www.linkedin.com/in/pallavi-handa/">linkedin.com/in/pallavi-handa</a>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2023 Pallavi Handa</p>
-</footer>
-
+    <footer>
+        <p>&copy; 2024 Pallavi Handa. All rights reserved.</p>
+    </footer>
 </body>
 </html>
