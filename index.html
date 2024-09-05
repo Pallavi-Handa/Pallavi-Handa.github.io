@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pallavi Handa - Data Analyst Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <style>
         :root {
             --primary-color: #ff8c00;
@@ -24,259 +21,137 @@
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--text-color);
-            overflow-x: hidden;
-        }
-
-        /* Sidebar styling */
-        .sidebar {
-            width: 300px;
-            height: 100vh;
+            font-family: Arial, sans-serif;
             background-color: var(--bg-color);
-            padding: 30px 20px;
-            position: fixed;
-            left: 0;
-            top: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .sidebar-header img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid var(--primary-color);
-        }
-        
-        .sidebar-header h1 {
             color: var(--text-color);
-            font-size: 2rem;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            padding: 1rem;
             text-align: center;
-            margin: 15px 0;
         }
-        
-        .sidebar-nav {
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem;
+        }
+
+        nav ul {
             list-style: none;
-            padding: 0;
+            display: flex;
+            justify-content: center;
         }
 
-        .sidebar-nav li {
-            margin-bottom: 20px;
+        nav ul li {
+            margin: 0 1rem;
         }
 
-        .sidebar-nav a {
+        nav ul li a {
             color: var(--text-color);
             text-decoration: none;
-            font-size: 1.1rem;
-            display: block;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        
-        .sidebar-nav a:hover {
-            background-color: var(--accent-color);
+            font-weight: bold;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .social-links a {
-            color: var(--accent-color);
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Main content */
-        .main-content {
-            margin-left: 300px;
-            padding: 50px;
-            color: var(--text-color);
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
         }
 
         section {
-            margin-bottom: 60px;
-            padding: 20px;
             background-color: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 8px;
         }
 
-        section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        h1, h2 {
+            color: var(--accent-color);
         }
 
-        h2 {
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            position: relative;
-            color: var(--primary-color);
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        h2::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent-color);
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-        }
-
-        .project img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .project-links a {
-            display: inline-block;
-            margin-right: 10px;
-            padding: 8px 20px;
-            background-color: var(--primary-color);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            font-size: 1rem;
-        }
-
-        .project-links a:hover {
+        .project {
             background-color: var(--secondary-color);
+            padding: 1rem;
+            border-radius: 8px;
         }
 
-        /* Footer */
         footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            background-color: var(--secondary-color);
             color: var(--text-color);
-            background-color: var(--bg-color);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-
-            .main-content {
-                margin-left: 0;
-                padding: 20px;
-            }
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
         }
     </style>
 </head>
-
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <img src="https://media.licdn.com/dms/image/v2/D5603AQG7Jkifg5XexQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1685992178343?e=1729123200&v=beta&t=BVyD9hoqNLz-TkNCLvmguyxisZiKDz8JAlZUPWV2pcY" alt="Pallavi Handa">
-            <h1>Pallavi Handa</h1>
-            <p><span id="typed-text"></span></p>
-        </div>
-        <nav>
-            <ul class="sidebar-nav">
-                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-                <li><a href="#skills"><i class="fas fa-chart-bar"></i> Skills</a></li>
-                <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
-                <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
-            </ul>
-        </nav>
-        <div class="social-links">
-            <a href="mailto:pallavihanda25@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/pallavi-handa"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Pallavi-Handa"><i class="fab fa-github"></i></a>
-        </div>
-    </aside>
+    <header>
+        <h1>Pallavi Handa</h1>
+        <p>Data Analyst | Python Developer | Power BI Expert</p>
+    </header>
 
-    <main class="main-content">
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
         <section id="about">
             <h2>About Me</h2>
-            <p>I’m Pallavi, a passionate data analyst who loves turning raw data into meaningful insights. With a knack for Power BI and Python, I’ve delivered actionable reports and models that help businesses grow and make informed decisions.</p>
-        </section>
-
-        <section id="experience">
-            <h2>Experience</h2>
-            <p><strong>Data Analyst Intern</strong>, Senocare, India (Jun 2021 – Dec 2021)</p>
-            <ul>
-                <li>Designed and developed interactive dashboards using Power BI to visualize elder care performance indicators (KPIs).</li>
-                <li>Analyzed service utilization trends, contributing to a 20% optimization in resource allocation.</li>
-            </ul>
+            <p>I'm Pallavi, a passionate data analyst with expertise in Power BI and Python. I love turning raw data into meaningful insights that drive business decisions.</p>
         </section>
 
         <section id="skills">
             <h2>Skills</h2>
-            <p><strong>Power BI, SQL, Python, Tableau, Advanced Excel</strong></p>
+            <ul>
+                <li>Power BI</li>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>Data Visualization</li>
+                <li>Statistical Analysis</li>
+            </ul>
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
-
-            <div class="project">
-                <h3>Business 360 - Sales Dashboard</h3>
-                <img src="assets/images/project1-placeholder.jpg" alt="Business 360 Project">
-                <p>Customized a Power BI dashboard to analyze global sales trends for Nexus hardware.</p>
-                <div class="project-links">
-                    <a href="https://github.com/Pallavi-Handa/portfolio">GitHub Repo</a>
-                    <a href="#">Live Demo</a>
+            <div class="projects">
+                <div class="project">
+                    <h3>Business 360 - Sales Dashboard</h3>
+                    <p>A Power BI dashboard analyzing global sales trends for Nexus hardware.</p>
                 </div>
-            </div>
-
-            <div class="project">
-                <h3>Cryptocurrency Data Analysis</h3>
-                <img src="assets/images/project2-placeholder.jpg" alt="Cryptocurrency Project">
-                <p>Developed an automated Python system to extract and visualize trends in the top 15 cryptocurrencies.</p>
-                <div class="project-links">
-                    <a href="https://github.com/Pallavi-Handa/Automating-Crypto-Report">GitHub Repo</a>
+                <div class="project">
+                    <h3>Cryptocurrency Data Analysis</h3>
+                    <p>Python system to extract and visualize trends in top 15 cryptocurrencies.</p>
                 </div>
-            </div>
-
-            <div class="project">
-                <h3>Customer Segmentation & Churn Prediction</h3>
-                <img src="assets/images/project3-placeholder.jpg" alt="Churn Prediction Project">
-                <p>Built a predictive model using Python to forecast customer churn in the telecom sector, achieving a 92.4% accuracy rate.</p>
-                <div class="project-links">
-                    <a href="https://github.com/Pallavi-Handa/Customer_Churn">GitHub Repo</a>
+                <div class="project">
+                    <h3>Customer Churn Prediction</h3>
+                    <p>Predictive model using Python to forecast customer churn in telecom sector.</p>
                 </div>
             </div>
         </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <p>Seneca College, Business Analytics (2024)</p>
-            <p>Durham College, International Business Management (2023)</p>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: pallavihanda25@gmail.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/pallavi-handa">linkedin.com/in/pallavi-handa</a></p>
+            <p>GitHub: <a href="https://github.com/Pallavi-Handa">github.com/Pallavi-Handa</a></p>
         </section>
     </main>
 
     <footer>
-        <p>© 2024 Pallavi Handa. All rights reserved.</p>
+        <p>&copy; 2024 Pallavi Handa. All rights reserved.</p>
     </footer>
-
-    <script>
-        var typed = new Typed('#typed-text', {
-            strings: ["a Data Analyst", "a Python Developer", "a Power BI Expert"],
-            typeSpeed: 50,
-            backSpeed: 50,
-            loop: true
-        });
-    </script>
 </body>
 </html>
