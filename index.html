@@ -1,332 +1,391 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pallavi Handa - Data Analyst Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #ff8c00;
-            --secondary-color: #4b0082;
-            --accent-color: #00ced1;
-            --bg-color: #1b1b2f;
-            --text-color: #f7f7f7;
-            --card-bg: #222831;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--secondary-color);
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                var(--secondary-color),
-                var(--secondary-color) 10px,
-                var(--primary-color) 10px,
-                var(--primary-color) 20px
-            );
-            opacity: 0.1;
-            animation: backgroundMove 20s linear infinite;
-        }
-
-        @keyframes backgroundMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50%, 50%); }
-        }
-
-        header h1, header p {
-            position: relative;
-            z-index: 1;
-        }
-
-        nav {
-            background-color: var(--primary-color);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 1rem;
-        }
-
-        nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent-color);
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            background-color: var(--card-bg);
-            margin-bottom: 2rem;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-5px);
-        }
-
-        h1, h2 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        .hero {
-            background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-            background-size: 100% 300px;
-            background-position: 0% 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--text-color);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .skill-item {
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-             .project {
-            background-color: var(--secondary-color);
-            padding: 1.5rem;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .project:hover {
-            transform: scale(1.05);
-        }
-
-        .project h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-item a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: var(--primary-color);
-        }
-
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pallavi Handa - Data Analyst Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+      display: flex;
+    }
+    
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      overflow-y: auto;
+    }
+    
+    .sidebar-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .sidebar-header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #3498db;
+    }
+    
+    .sidebar-header h1 {
+      margin-top: 15px;
+      font-size: 1.5rem;
+    }
+    
+    .sidebar-header p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    .sidebar-nav {
+      list-style-type: none;
+    }
+    
+    .sidebar-nav li {
+      margin-bottom: 15px;
+    }
+    
+    .sidebar-nav a {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    
+    .sidebar-nav a:hover {
+      color: #3498db;
+      transform: translateX(5px);
+    }
+    
+    .sidebar-nav i {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+    
+    .social-links {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .social-links a {
+      color: #fff;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: #3498db;
+    }
+    
+    .main-content {
+      margin-left: 250px;
+      padding: 40px;
+      width: calc(100% - 250px);
+    }
+    
+    section {
+      background-color: #ffffff;
+      margin-bottom: 40px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    section:hover {
+      transform: translateY(-5px);
+    }
+    
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      bottom: -5px;
+      left: 0;
+      background-color: #3498db;
+    }
+    
+    .skill-category {
+      margin-bottom: 30px;
+    }
+    
+    .skill-item {
+      margin-bottom: 15px;
+    }
+    
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+    
+    .skill-bar {
+      height: 10px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .skill-level {
+      height: 100%;
+      background: linear-gradient(90deg, #3498db, #e74c3c);
+      border-radius: 5px;
+      transition: width 1s ease-in-out;
+    }
+    
+        .project {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .project h3 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+    
+    .project-links {
+      margin-top: 15px;
+    }
+    
+    .project-links a {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 8px 15px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      font-size: 0.9rem;
+    }
+    
+    .project-links a:hover {
+      background-color: #2c3e50;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+      }
+      .main-content {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Pallavi Handa</h1>
-        <p>Data Analyst | Python Developer | Power BI Expert</p>
-    </header>
-
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="https://media.licdn.com/dms/image/v2/D5603AQG7Jkifg5XexQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1685992178343?e=1729123200&v=beta&t=BVyD9hoqNLz-TkNCLvmguyxisZiKDz8JAlZUPWV2pcY" alt="Pallavi Handa">
+      <h1>Pallavi Handa</h1>
+      <p>Data Analyst | Business Analytics Student</p>
+    </div>
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#blog">Blog</a></li>
-        </ul>
+      <ul class="sidebar-nav">
+        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="#skills"><i class="fas fa-chart-bar"></i> Skills</a></li>
+        <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+        <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+      </ul>
     </nav>
+    <div class="social-links">
+      <a href="mailto:pallavihanda25@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/pallavi-handa"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Pallavi-Handa"><i class="fab fa-github"></i></a>
+      <a href="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9"><i class="fas fa-chart-bar"></i></a>
+    </div>
+  </aside>
 
-    <main>
-        <section id="hero" class="hero">
-            <h1>Welcome to my portfolio!</h1>
-            <p>I'm Pallavi Handa, a passionate data analyst with expertise in Power BI and Python.</p>
-            <button>Learn More</button>
-        </section>
+  <main class="main-content">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Passionate data analyst with a keen eye for detail and a drive for uncovering meaningful insights. Experienced in leveraging data to drive business decisions and optimize processes.</p>
+    </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hi, I'm Pallavi Handa, a passionate data analyst with a strong background in Python development and Power BI expertise. With a keen eye for detail and a love for uncovering insights, I transform complex data into clear, actionable intelligence that drives business decisions.</p>
-            <p>I have [number] years of experience in data analysis and have worked with various clients across different industries. My expertise includes data visualization, statistical analysis, machine learning, and data cleaning.</p>
-        </section>
+    <section id="experience">
+      <h2>Experience</h2>
+      <h3>Data Analyst Intern, Senocare, India (Jun 2021 – Dec 2021)</h3>
+      <p>Collaborated with the Client Relations Manager to gather, interpret, and analyze data to extract actionable insights.</p>
+      <h4>Key Responsibilities:</h4>
+      <ul>
+                <li>Design and develop interactive dashboards using Power BI to visualize key performance indicators (KPIs) for elder care services, including:
+          <ul>
+            <li>Service utilization rates across different care packages, leading to a 20% optimization of resource allocation</li>
+            <li>Client satisfaction scores and feedback trends, contributing to a 12% improvement in overall client satisfaction</li>
+            <li>Patterns and trends in elder care need to inform strategic decision-making and service improvements</li>
+            <li>Cost-based analysis giving insight into the profitability of each service offering</li>
+          </ul>
+        </li>
+        <li>Create reports to monitor service ticket trends and execution timelines, ensuring timely delivery of care services and improving on-time completion rate by 18%</li>
+        <li>Utilize MySQL to manage and query large datasets related to client profiles, service history, and health records.</li>
+      </ul>
+    </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-list">
-                <div class="skill-item">
-                    <i class="fas fa-chart-bar"></i>
-                    <h3>Data Visualization</h3>
-                    <p>Expertise in creating interactive and dynamic visualizations using Power BI, Tableau, and D3.js.</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-code"></i>
-                    <h3>Python Development</h3>
-                    <p>Proficient in Python programming language, including data structures, algorithms, and machine learning libraries.</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-database"></i>
-                    <h3>Data Analysis</h3>
-                    <p>Skilled in data analysis, including data cleaning, statistical analysis, and data modeling.</p>
-                </div>
-            </div>
-        </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skill-category">
+        <h3>Analytical Tools</h3>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Power BI</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Tableau</span>
+            <span>85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Advanced Excel</span>
+            <span>95%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 95%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Programming Languages</h3>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>SQL</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Python</span>
+            <span>80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 80%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>SAS</span>
+            <span>75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 75%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Database</h3>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>MySQL</span>
+            <span>85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 85%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects">
-                <div class="project">
-                    <h3>Business 360 - Sales Dashboard</h3>
-                    <p>A comprehensive Power BI dashboard analyzing global sales trends for Nexus hardware.</p>
-                </div>
-                <div class="project">
-                    <h3>Cryptocurrency Data Analysis</h3>
-                    <p>Developed a Python system to extract, process, and visualize trends in the top 15 cryptocurrencies.</p>
-                </div>
-                <div class="project">
-                    <h3>Customer Churn Prediction</h3>
-                    <p>Built a machine learning model using Python and scikit-learn to forecast customer churn in the telecom sector.</p>
-                </div>
-            </div>
-        </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Business 360 - Brick & mortar and e-commerce</h3>
+        <p><strong>Tools:</strong> Power BI | SQL | Excel | Dax Studio</p>
+        <p><strong>Completed:</strong> Jul 2024</p>
+        <ul>
+          <li>Customized a multi-functional Power BI dashboard to analyze Nexus hardware's sales trends over the global market by gathering data from 2 different sources (Excel/CSV files and a SQL database).</li>
+          <li>Built data models and visualizations in Power BI, and optimized the report with DAX studio which improved the report's performance by 5%.</li>
+          <li>Developed a dashboard that enabled Nexus Hardware to analyze department sales trends, driving a projected 10% revenue acceleration and a 20% reduction in data-related expenses.</li>
+        </ul>
+        <div class="project-links">
+                    <a href="https://github.com/Pallavi-Handa/Business-360">View on GitHub</a>
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9">View on Power BI</a>
+        </div>
+      </div>
 
-        <section id="blog">
-            <h2>Blog</h2>
-                        <div class="blog-list">
-                <div class="blog-post">
-                    <h3>5 Tips for Effective Data Visualization</h3>
-                    <p>Learn how to create stunning and informative visualizations that drive business decisions.</p>
-                    <button>Read More</button>
-                </div>
-                <div class="blog-post">
-                    <h3>Python for Data Analysis: A Beginner's Guide</h3>
-                    <p>Discover the power of Python for data analysis and learn how to get started with popular libraries like Pandas and NumPy.</p>
-                    <button>Read More</button>
-                </div>
-                <div class="blog-post">
-                    <h3>The Future of Business Intelligence: Trends to Watch</h3>
-                    <p>Stay ahead of the curve with the latest trends and innovations in business intelligence and data analytics.</p>
-                    <button>Read More</button>
-                </div>
-            </div>
-        </section>
+      <div class="project">
+        <h3>Sales Forecasting using ARIMA Model</h3>
+        <p><strong>Tools:</strong> Python | pandas | NumPy | Matplotlib | Scikit-learn</p>
+        <p><strong>Completed:</strong> Mar 2023</p>
+        <ul>
+          <li>Developed an ARIMA model using Python to forecast sales for a retail company, resulting in a 12% improvement in sales forecasting accuracy.</li>
+          <li>Utilized pandas and NumPy for data manipulation and analysis, and Matplotlib for data visualization.</li>
+          <li>Implemented the model using Scikit-learn, achieving a mean absolute error (MAE) of 5.2%.</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/Pallavi-Handa/Sales-Forecasting-ARIMA">View on GitHub</a>
+        </div>
+      </div>
+    </section>
 
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:pallavi.handa@email.com">pallavi.handa@email.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+1234567890">+1234567890</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/pallavi-handa/">linkedin.com/in/pallavi-handa</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Pallavi Handa. All rights reserved.</p>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <section id="education">
+      <h2>Education</h2>
+      <h3>Master of Science in Business Analytics, XYZ University (2022-2024)</h3>
+      <p>Coursework: Data Mining, Machine Learning, Statistics, and Data Visualization.</p>
+      <h3>Bachelor of Technology in Computer Science, ABC University (2018-2022)</h3>
+      <p>Coursework: Data Structures, Algorithms, Computer Networks, and Database Management Systems.</p>
+    </section>
+  </main>
 </body>
 </html>
