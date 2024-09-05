@@ -1,101 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pallavi Handa's Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        .sidebar {
-            float: left;
-            width: 25%;
-            background: #333;
-            color: #fff;
-            padding: 1rem;
-        }
-        .sidebar a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            padding: 0.5rem 0;
-        }
-        .sidebar a:hover {
-            background: #575757;
-        }
-        .content {
-            float: right;
-            width: 70%;
-            padding: 1rem;
-        }
-        footer {
-            clear: both;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Pallavi Handa's Portfolio</h1>
-    </header>
+from IPython.display import display, HTML, Markdown
 
-    <div class="container">
-        <div class="sidebar">
-            <h2>Menu</h2>
-            <a href="#projects">Projects</a>
-            <a href="#certifications">Certifications</a>
-        </div>
+# Display title for your project
+display(Markdown("# Pallavi Handa's Portfolio"))
 
-        <div class="content">
-            <h2 id="projects">Projects</h2>
-            
-            <h3>Healthcare Provider Analytics</h3>
-            <p><strong>[Power BI | DAX]</strong> | Live Dashboard – August 2024</p>
-            <p>Managed $3M+ in billing data and $1M in out-of-pocket expenses via Power BI, optimizing financial tracking and identifying a 10% potential billing efficiency.</p>
-            <img src="assets/Healthcare_physicianview.png" alt="Healthcare Provider Analytics - Physician View">
-            <img src="assets/Healthcare_revenue(d).png" alt="Healthcare Provider Analytics - Revenue Detail (D)">
-            <img src="assets/Healthcare_revenue(l).png" alt="Healthcare Provider Analytics - Revenue Detail (L)">
-            
-            <h3>NEXUS-360 Analytics</h3>
-            <p><strong>[Finance | Marketing | Sales]</strong> | Dashboard Analysis – August 2024</p>
-            <p>Developed interactive dashboards across Finance, Marketing, and Sales, integrating key performance metrics and visualizations to drive business insights.</p>
-            <img src="assets/NEXUS-360_Finance.png" alt="NEXUS-360 Finance Dashboard">
-            <img src="assets/NEXUS-360_Marketing.png" alt="NEXUS-360 Marketing Dashboard">
-            <img src="assets/NEXUS-360_SALES.png" alt="NEXUS-360 Sales Dashboard">
+# Business Nexus Project Section
+display(Markdown("## Business Nexus Project"))
+display(Markdown("This project focused on automating and optimizing business processes. Below are some images representing the progress and key components of the project."))
 
-            <h2 id="certifications">Certifications</h2>
-            <p>Details about your certifications will be listed here.</p>
-        </div>
-    </div>
+# Display Business Nexus images
+display(HTML('''
+    <img src="https://github.com/Pallavi-Handa/Pallavi-Handa.github.io/blob/main/NEXUS-360_Finance.png?raw=true" alt="Nexus 360 Finance" width="500">
+    <img src="https://github.com/Pallavi-Handa/Pallavi-Handa.github.io/blob/main/NEXUS-360_Marketing.png?raw=true" alt="Nexus 360 Marketing" width="500">
+    <img src="https://github.com/Pallavi-Handa/Pallavi-Handa.github.io/blob/main/NEXUS-360_SALES.png?raw=true" alt="Nexus 360 Sales" width="500">
+'''))
 
-    <footer>
-        <p>&copy; 2024 Pallavi Handa. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+# Healthcare Project Section
+display(Markdown("## Healthcare Project"))
+display(Markdown("This project involved implementing machine learning models to predict patient outcomes and optimize resource management in healthcare. Below are images that provide insight into various aspects of the healthcare data and processes."))
+
+# Display Healthcare images
+display(HTML('''
+    <img src="https://github.com/Pallavi-Handa/Pallavi-Handa.github.io/blob/main/Healthcare_physicianview.png?raw=true" alt="Healthcare Physician View" width="500">
+    <img src="https://github.com/Pallavi-Handa/Pallavi-Handa.github.io/blob/main/Healthcare_revenue(d).png?raw=true" alt="Healthcare Revenue (d)" width="500">
+    <img src="https://github.com/Pallavi-Handa/Pallavi-Handa.github.io/blob/main/Healthcare_revenue(l).png?raw=true" alt="Healthcare Revenue (l)" width="500">
+'''))
+
+# Embed Power BI dashboard for Healthcare
+display(Markdown("### Healthcare Dashboard"))
+display(Markdown("This dashboard showcases a comprehensive view of healthcare data analytics, including physician views and revenue breakdowns."))
+display(HTML('''
+    <iframe title="Healthcare Dashboard" width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJ
