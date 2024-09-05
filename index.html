@@ -1,32 +1,338 @@
-from IPython.display import display, HTML, Markdown
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pallavi Handa - Data Analyst Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff8c00;
+            --secondary-color: #4b0082;
+            --accent-color: #00ced1;
+            --bg-color: #1b1b2f;
+            --text-color: #f7f7f7;
+            --card-bg: #222831;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            display: flex;
+        }
+        
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 20px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+        }
+        
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary-color);
+        }
+        
+        .sidebar-header h1 {
+            margin-top: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .sidebar-header p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .sidebar-nav {
+            list-style-type: none;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-nav a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-nav a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        
+        .sidebar-nav i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 40px;
+            width: calc(100% - 250px);
+        }
+        
+        section {
+            background-color: var(--card-bg);
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .skill-category {
+            margin-bottom: 30px;
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 5px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .project {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .project h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .project-links {
+            margin-top: 15px;
+        }
+        
+        .project-links a {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 8px 15px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .project-links a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
 
-# Display title for your project
-display(Markdown("# Pallavi Handa's Portfolio"))
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+           <img src="https://media.licdn.com/dms/image/v2/D5603AQG7Jkifg5XexQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1685992178343?e=1729123200&v=beta&t=BVyD9hoqNLz-TkNCLvmguyxisZiKDz8JAlZUPWV2pcY" alt="Pallavi Handa">
+            <h1>Pallavi Handa</h1>
+            <p>Data Analyst | Business Analytics Student</p>
+        </div>
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="#skills"><i class="fas fa-chart-bar"></i> Skills</a></li>
+                <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+            </ul>
+        </nav>
+        <div class="social-links">
+            <a href="mailto:pallavihanda25@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/pallavi-handa"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Pallavi-Handa"><i class="fab fa-github"></i></a>
+            <a href="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9"><i class="fas fa-chart-bar"></i></a>
+        </div>
+    </aside>
 
-# Business Nexus Project Section
-display(Markdown("## Business Nexus Project"))
-display(Markdown("This project focused on automating and optimizing business processes. Below are some images representing the progress and key components of the project."))
+    <main class="main-content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Passionate data analyst with a keen eye for detail and a drive for uncovering meaningful insights. Experienced in leveraging data to drive business decisions and optimize processes.</p>
+        </section>
 
-# Display Business Nexus images
-display(HTML('''
-    <img src="https://github.com/Pallavi-Handa/Pallavi-Handa.github.io/blob/main/NEXUS-360_Finance.png?raw=true" alt="Nexus 360 Finance" width="500">
-    <img src="https://github.com/Pallavi-Handa/Pallavi-Handa.github.io/blob/main/NEXUS-360_Marketing.png?raw=true" alt="Nexus 360 Marketing" width="500">
-    <img src="https://github.com/Pallavi-Handa/Pallavi-Handa.github.io/blob/main/NEXUS-360_SALES.png?raw=true" alt="Nexus 360 Sales" width="500">
-'''))
+        <section id="experience">
+            <h2>Experience</h2>
+            <h3>Data Analyst Intern, Senocare, India (Jun 2021 – Dec 2021)</h3>
+            <p>Collaborated with the Client Relations Manager to gather, interpret, and analyze data to extract actionable insights. Developed and managed dashboards on Power BI to track key metrics related to customer behavior.</p>
+        </section>
 
-# Healthcare Project Section
-display(Markdown("## Healthcare Project"))
-display(Markdown("This project involved implementing machine learning models to predict patient outcomes and optimize resource management in healthcare. Below are images that provide insight into various aspects of the healthcare data and processes."))
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skill-category">
+                <h3>Technical Skills</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Python</span>
+                        <span>Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%;"></div>
+                    </div>
+                </div>
 
-# Display Healthcare images
-display(HTML('''
-    <img src="https://github.com/Pallavi-Handa/Pallavi-Handa.github.io/blob/main/Healthcare_physicianview.png?raw=true" alt="Healthcare Physician View" width="500">
-    <img src="https://github.com/Pallavi-Handa/Pallavi-Handa.github.io/blob/main/Healthcare_revenue(d).png?raw=true" alt="Healthcare Revenue (d)" width="500">
-    <img src="https://github.com/Pallavi-Handa/Pallavi-Handa.github.io/blob/main/Healthcare_revenue(l).png?raw=true" alt="Healthcare Revenue (l)" width="500">
-'''))
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>SQL</span>
+                        <span>Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 75%;"></div>
+                    </div>
+                </div>
 
-# Embed Power BI dashboard for Healthcare
-display(Markdown("### Healthcare Dashboard"))
-display(Markdown("This dashboard showcases a comprehensive view of healthcare data analytics, including physician views and revenue breakdowns."))
-display(HTML('''
-    <iframe title="Healthcare Dashboard" width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiMGM1YjljMGItZTUxNy00NjRlLWEzNzUtZGY0ZjllZTM1MWFlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJ
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Power BI</span>
+                        <span>Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Healthcare Provider Analytics</h3>
+                <p>Developed a model to predict healthcare providers' revenue growth based on patient demographics, treatment success rates, and hospital location. Utilized Python for data preprocessing and machine learning, with visualizations created in Power BI.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Pallavi-Handa/Healthcare-Provider-Analytics" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Loan Repayment Classification</h3>
+                <p>Machine learning project aimed at classifying loan repayment ability using alternative data. Techniques such as feature engineering, model selection (e.g., Logistic Regression, XGBoost), and cross-validation were used for model optimization.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Pallavi-Handa/Loan-Repayment-Prediction" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Customer Churn Prediction</h3>
+                <p>Designed and implemented a model to predict customer churn for a telecom company using Python. Applied techniques like Logistic Regression, Random Forest, and XGBoost to identify key factors contributing to churn.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Pallavi-Handa/Customer-Churn-Prediction" target="_blank">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <h3>Business Analytics Program, Seneca College (2024)</h3>
+            <h3>International Business Management Program, Durham College (2023)</h3>
+            <h3>Bachelor of Commerce (Hons), Hansraj College, India (2022)</h3>
+        </section>
+    </main>
+</body>
+</html>
